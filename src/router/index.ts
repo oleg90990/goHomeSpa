@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 
-import Home from '../pages/Home';
+import Home from '@/pages/Home/index.vue';
 
 Vue.use(VueRouter)
   const routes: Array<RouteConfig> = [
