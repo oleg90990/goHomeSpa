@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import Container from '@/components/Container/index.vue';
+import Container from '@/components/layout/Default/index.vue';
 
 @Component({
   components: {
@@ -16,6 +16,5 @@ import Container from '@/components/Container/index.vue';
   },
 })
 export default class App extends Vue {
-
 }
 </script>
