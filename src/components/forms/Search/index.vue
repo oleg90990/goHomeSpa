@@ -1,6 +1,6 @@
 <template>
   <div>
-    <animal-select-widget />
+    <animal-select-widget class="mb-3" />
   </div>
 </template>
 
