@@ -3,7 +3,7 @@ import AnimalSelect from '@/components/ui/elements/AnimalSelect/index.vue'
 
 @Component({
   components: {
-    AnimalSelect
+    AnimalSelect,
   },
 })
 export default class AnimalSelectWidget extends Vue {

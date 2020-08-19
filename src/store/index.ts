@@ -1,15 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { RootState } from './types'
+import { dictionaries } from './modules/dictionaries'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
+const store = new Vuex.Store<RootState>({
   modules: {
-  }
+    dictionaries,
+  },
 })
+
+export default store

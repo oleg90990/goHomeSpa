@@ -4,7 +4,7 @@ import AnimalSelectWidget from '@/components/ui/widgets/AnimalSelectWidget/index
 
 @Component({
   components: {
-     AnimalSelectWidget
+     AnimalSelectWidget,
   },
 })
 export default class Search extends Vue {
