@@ -1,0 +1,34 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '@oleg90990/friendshome-api@1.0.2',
+1 verbose cli   '-no-cache' ]
+2 info using npm@6.14.7
+3 info using node@v10.19.0
+4 verbose npm-session d17777c86be35058
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 http fetch GET 404 http://registry.npmjs.org/@oleg90990%2ffriendshome-api 1090ms
+8 http fetch GET 404 http://registry.npmjs.org/@oleg90990%2ffriendshome-api 88ms
+9 silly fetchPackageMetaData error for @oleg90990/friendshome-api@1.0.2 404 Not Found - GET http://registry.npmjs.org/@oleg90990%2ffriendshome-api - Not found
+10 timing stage:rollbackFailedOptional Completed in 2ms
+11 timing stage:runTopLevelLifecycles Completed in 2483ms
+12 verbose stack Error: 404 Not Found - GET http://registry.npmjs.org/@oleg90990%2ffriendshome-api - Not found
+12 verbose stack     at res.buffer.catch.then.body (/usr/local/lib/node_modules/npm/node_modules/npm-registry-fetch/check-response.js:114:15)
+12 verbose stack     at process._tickCallback (internal/process/next_tick.js:68:7)
+13 verbose statusCode 404
+14 verbose pkgid @oleg90990/friendshome-api@1.0.2
+15 verbose cwd /home/oleg/proj/frendshome/spa
+16 verbose Linux 5.4.0-42-generic
+17 verbose argv "/usr/bin/node" "/usr/local/bin/npm" "install" "@oleg90990/friendshome-api@1.0.2" "-no-cache"
+18 verbose node v10.19.0
+19 verbose npm  v6.14.7
+20 error code E404
+21 error 404 Not Found - GET http://registry.npmjs.org/@oleg90990%2ffriendshome-api - Not found
+22 error 404
+23 error 404 '@oleg90990/friendshome-api@1.0.2' is not in the npm registry.
+24 error 404 You should bug the author to publish it (or use the name yourself!)
+25 error 404 Note that you can also install from a
+26 error 404 tarball, folder, http url, or git url.
+27 verbose exit [ 1, true ]

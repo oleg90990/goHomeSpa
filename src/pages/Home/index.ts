@@ -3,7 +3,7 @@ import SearchForm from '@/components/forms/Search/index.vue'
 
 @Component({
   components: {
-      SearchForm
+      SearchForm,
   },
 })
 export default class Home extends Vue {
