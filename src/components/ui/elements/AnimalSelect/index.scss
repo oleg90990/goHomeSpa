@@ -1,0 +1,7 @@
+.animal {
+  opacity: 0.4;
+  cursor: pointer;
+  &.selected {
+    opacity: 1;
+  }
+}

@@ -1,6 +1,6 @@
 <template>
   <b-card sub-title="Я ищу">
-    <animal-select />
+    <animal-select v-model="input" class="mt-3" />
   </b-card>
 </template>
 

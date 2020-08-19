@@ -1,0 +1,14 @@
+.breeds {
+  height: 400px;
+  overflow-y: scroll;
+  padding-right: 10px;
+  .breed {
+    cursor: pointer;
+    &:hover {
+      background-color: #f8f9fa;
+    }
+    &:last-child {
+      border-width: 0 !important;
+    }
+  }
+}
