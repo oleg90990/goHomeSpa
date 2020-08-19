@@ -1,7 +1,7 @@
 import ApiBase, { Mode } from 'friendshome-api'
 import Notify from '@/utils/notify'
 
-const api = new ApiBase(Mode.dev, null, error => {
+const api = new ApiBase(Mode.prod, null, error => {
     Notify.error('Ошибка', error)
 })
 
