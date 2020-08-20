@@ -1,7 +1,38 @@
 <template>
   <div>
-    <animal-select-widget class="mb-3" v-model="data.animal" />
-    <breeds-select-widget class="mb-3" v-model="data.breeds" :animal-id="data.animal" v-if="data.animal" />
+    <city-widget
+      class="mb-3"
+      v-model="data.city"
+    />
+    <animal-widget
+      class="mb-3"
+      v-model="data.animal"
+    />
+    <breeds-widget
+      class="mb-3"
+      v-model="data.breeds"
+      :animal-id="data.animal"
+      v-if="data.animal"
+    />
+    <gender-widget
+      class="mb-3"
+      v-model="data.gender"
+      :animal-id="data.animal"
+      v-if="data.animal"
+    />
+    <sterilization-widget
+      class="mb-3"
+      v-model="data.sterilization"
+      :gender="data.gender"
+    />
+    <age-widget
+      class="mb-3"
+      v-model="data.ages"
+    />
+    <color-widget
+      class="mb-3"
+      v-model="data.colors"
+    />
   </div>
 </template>
 

@@ -6,7 +6,7 @@ import AnimalSelect from '@/components/ui/elements/AnimalSelect/index.vue'
     AnimalSelect,
   },
 })
-export default class AnimalSelectWidget extends Vue {
+export default class AnimalWidget extends Vue {
   @Prop(Number) private value?: number;
 
   private input?: number = this.value;

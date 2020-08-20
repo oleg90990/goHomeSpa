@@ -6,7 +6,7 @@ export const getters: GetterTree<IStateDictionaries, RootState> = {
   animals(state): IDictionaryAnimalType[] {
     return state.animals
   },
-  getBredbyId: state => (bredId: number): IDictionaryItem | undefined => {
+  getBredById: state => (bredId: number): IDictionaryItem | undefined => {
     for (const animal of state.animals) {
       const bred = animal.breeds.find(({ id }) => id === bredId)
 
@@ -14,5 +14,11 @@ export const getters: GetterTree<IStateDictionaries, RootState> = {
         return bred;
       }
     }
+  },
+  getAnimalById: state => (animalId: number): IDictionaryAnimalType | undefined => {
+    return state.animals.find(({ id }) => id === animalId)
+  },
+  getColors: state => {
+    return state.colors
   },
 }
