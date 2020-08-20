@@ -6,7 +6,7 @@ import GenderWidget from '@/components/ui/widgets/GenderWidget/index.vue'
 import SterilizationWidget from '@/components/ui/widgets/SterilizationWidget/index.vue'
 import AgeWidget from '@/components/ui/widgets/AgeWidget/index.vue'
 import ColorWidget from '@/components/ui/widgets/ColorWidget/index.vue'
-import { IStateSearchBody, Gender, YesNo } from 'friendshome-api'
+import { IStateSearchForm, Gender, YesNo } from 'friendshome-api'
 
 @Component({
   components: {
@@ -20,7 +20,7 @@ import { IStateSearchBody, Gender, YesNo } from 'friendshome-api'
   },
 })
 export default class Search extends Vue {
-  private data: IStateSearchBody = {
+  private data: IStateSearchForm = {
     animal: 0,
     ages: {
       from: 0,
