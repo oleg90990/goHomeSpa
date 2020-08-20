@@ -1,5 +1,5 @@
 <template>
-  <b-card sub-title="Стирилизация / Кастрация">
+  <b-card :sub-title="getTitle()">
     <sterilization-select v-model="input" :gender="gender" class="mt-3" />
   </b-card>
 </template>

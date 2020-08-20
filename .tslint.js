@@ -17,7 +17,8 @@
     "object-literal-sort-keys": false,
     "no-consecutive-blank-lines": false,
     "semicolon":false,
-    "@typescript-eslint/no-inferrable-types": 2
+    "@typescript-eslint/no-inferrable-types": 2,
+    "no-var": 0
   },
   "jsRules": {
     "no-console": true

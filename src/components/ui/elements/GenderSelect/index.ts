@@ -5,16 +5,15 @@ import { namespace } from 'vuex-class';
 const dictionaries = namespace('dictionaries')
 
 @Component
-
 export default class GenderSelect extends Vue {
   @Prop(String) private value!: Gender
   @Prop(Number) private animalId!: number
 
   @dictionaries.Getter private getAnimalById!: (animalId: number) => IDictionaryAnimalType | undefined
 
-  private genders = Gender;
+  private variants = Gender;
 
-  private getGenderLabel(gender: Gender): string {
+  private getLabel(gender: Gender): string {
     const animal = this.getAnimalById(this.animalId)
 
     if (animal) {
@@ -24,12 +23,8 @@ export default class GenderSelect extends Vue {
     return 'Ошибка'
   }
 
-  private getVariant(value: Gender): string {
-    if (value === this.value) {
-      return 'primary'
-    }
-
-    return 'outline-primary'
+  private getVariantBtn(value: Gender): string {
+    return value === this.value ? 'primary' : 'outline-primary'
   }
 
   @Emit('input')

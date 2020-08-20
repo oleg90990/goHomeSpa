@@ -1,28 +1,28 @@
 <template>
   <div class="d-flex justify-content-between">
     <b-button
-      :variant="getVariant(genders.none)"
-      @click="selected(genders.none)"
+      :variant="getVariantBtn(variants.none)"
+      @click="selected(variants.none)"
       size="sm"
       class="w-100 p-0"
     >
-      {{ getGenderLabel(genders.none) }}
+      {{ getLabel(variants.none) }}
     </b-button>
     <b-button
-      :variant="getVariant(genders.male)"
-      @click="selected(genders.male)"
+      :variant="getVariantBtn(variants.male)"
+      @click="selected(variants.male)"
       size="sm"
       class="w-100 ml-1 mr-1"
     >
-      {{ getGenderLabel(genders.male) }}
+      {{ getLabel(variants.male) }}
     </b-button>
     <b-button
-      :variant="getVariant(genders.female)"
-      @click="selected(genders.female)"
+      :variant="getVariantBtn(variants.female)"
+      @click="selected(variants.female)"
       size="sm"
       class="w-100"
     >
-      {{ getGenderLabel(genders.female) }}
+      {{ getLabel(variants.female) }}
     </b-button>
   </div>
 </template>

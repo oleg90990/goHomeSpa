@@ -18,4 +18,7 @@ export const getters: GetterTree<IStateDictionaries, RootState> = {
   getAnimalById: state => (animalId: number): IDictionaryAnimalType | undefined => {
     return state.animals.find(({ id }) => id === animalId)
   },
+  getColors: state => {
+    return state.colors
+  },
 }

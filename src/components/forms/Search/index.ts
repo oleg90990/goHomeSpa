@@ -37,4 +37,9 @@ export default class Search extends Vue {
   private onChangeAnimal() {
     this.data.breeds = []
   }
+
+  @Watch('data', { immediate: true, deep: true })
+  private onChangeData() {
+    // console.log(this.data)
+  }
 }

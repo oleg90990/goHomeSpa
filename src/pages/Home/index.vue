@@ -1,7 +1,7 @@
 <template>
   <b-row>
     <b-col lg="8">
-        resutls
+        
     </b-col>
     <b-col lg="4">
         <search-form />
