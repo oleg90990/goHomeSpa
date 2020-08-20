@@ -40,6 +40,6 @@ export default class Search extends Vue {
 
   @Watch('data', { immediate: true, deep: true })
   private onChangeData() {
-    // console.log(this.data)
+    console.log(this.data)
   }
 }

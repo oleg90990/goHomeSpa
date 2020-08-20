@@ -1,6 +1,11 @@
 <template>
   <div>
-    CitySelect
+    <vue-bootstrap-typeahead 
+      v-model="query"
+      :data="options"
+      :serializer="s => s.name"
+      @hit="input"
+    />
   </div>
 </template>
 
