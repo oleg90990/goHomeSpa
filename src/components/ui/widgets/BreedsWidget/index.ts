@@ -6,7 +6,7 @@ import BreedsSelect from '@/components/ui/elements/BreedsSelect/index.vue'
     BreedsSelect,
   },
 })
-export default class BreedsSelectWidget extends Vue {
+export default class BreedsWidget extends Vue {
   @Prop(Array) private value!: number[]
   @Prop(Number) private animalId!: number
 
