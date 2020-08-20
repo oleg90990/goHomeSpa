@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-button @click="showModal">
+    <b-button size="sm" variant="primary" @click="showModal">
       Добавить породу
     </b-button>
     <b-modal ref="breedsModal" hide-footer title="Выбор породы" centered>
