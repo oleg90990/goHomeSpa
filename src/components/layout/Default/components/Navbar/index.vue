@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable="lg" variant="primary">
-    <b-navbar-brand href="#">
+    <b-navbar-brand :to="{ name: 'Home' }">
       <img src="@/assets/logo.png" height="50" alt="ДрузьяДома">
     </b-navbar-brand>
 

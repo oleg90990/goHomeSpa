@@ -1,23 +1,18 @@
 <template>
   <div id="app">
-    <container v-if="!loading">
+    <div v-if="!loading">
       <router-view/>
-    </container>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import Container from '@/components/layout/Default/index.vue';
 import { namespace } from 'vuex-class';
 
 const dictionaries = namespace('dictionaries')
 
-@Component({
-  components: {
-    Container,
-  },
-})
+@Component
 export default class App extends Vue {
   private loading: boolean = true;
 
