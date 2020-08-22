@@ -1,4 +1,4 @@
-import { Vue, Component, Watch } from 'vue-property-decorator'
+import { Vue, Component, Watch, Prop } from 'vue-property-decorator'
 import CityWidget from '@/components/ui/widgets/CityWidget/index.vue'
 import AnimalWidget from '@/components/ui/widgets/AnimalWidget/index.vue'
 import BreedsWidget from '@/components/ui/widgets/BreedsWidget/index.vue'
@@ -6,7 +6,7 @@ import GenderWidget from '@/components/ui/widgets/GenderWidget/index.vue'
 import SterilizationWidget from '@/components/ui/widgets/SterilizationWidget/index.vue'
 import AgeWidget from '@/components/ui/widgets/AgeWidget/index.vue'
 import ColorWidget from '@/components/ui/widgets/ColorWidget/index.vue'
-import { IStateSearchForm, Gender, YesNo } from 'friendshome-api'
+import { IStateSearchBody} from 'friendshome-api'
 
 @Component({
   components: {
@@ -20,26 +20,10 @@ import { IStateSearchForm, Gender, YesNo } from 'friendshome-api'
   },
 })
 export default class Search extends Vue {
-  private data: IStateSearchForm = {
-    animal: 0,
-    ages: {
-      from: 0,
-      to: 5,
-    },
-    colors: [],
-    breeds: [],
-    gender: Gender.none,
-    sterilization: YesNo.none,
-    city: undefined,
-  }
+  @Prop(Object) private data!: IStateSearchBody
 
   @Watch('data.animal')
   private onChangeAnimal() {
     this.data.breeds = []
-  }
-
-  @Watch('data', { immediate: true, deep: true })
-  private onChangeData() {
-    console.log(this.data)
   }
 }

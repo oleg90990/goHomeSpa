@@ -6,7 +6,7 @@ import _ from 'lodash';
 
 @Component({
   components: {
-    VueBootstrapTypeahead
+    VueBootstrapTypeahead,
   },
 })
 export default class CitySelect extends Vue {
@@ -15,6 +15,15 @@ export default class CitySelect extends Vue {
 
   private query: string = ''
   private options: ICityItem[] = []
+
+
+  @Watch('query')
+  private onChangeQuery = _.debounce(this.loadCities, 300)
+
+  @Emit()
+  private input($event: ICityItem) {
+    return $event
+  }
 
   private loadCities() {
     Api.findCity(this.query, true)
@@ -27,16 +36,6 @@ export default class CitySelect extends Vue {
     if (this.value) {
       this.query = this.value.name
     }
-  }
-
-  @Watch('query')
-  private onChangeQuery = _.debounce(() => {
-    this.loadCities()
-  }, 350)
-
-  @Emit()
-  private input($event: ICityItem) {
-    return $event;
   }
 
   // private get options(): string[] {
