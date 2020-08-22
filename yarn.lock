@@ -4213,7 +4213,7 @@ fresh@0.5.2:
 
 "friendshome-api@git+https://github.com/oleg90990/goHomeApi.git":
   version "1.0.1"
-  resolved "git+https://github.com/oleg90990/goHomeApi.git#a063de97edb44737d5b78711805ef5ffc668c619"
+  resolved "git+https://github.com/oleg90990/goHomeApi.git#0954aff6df3287091cbdc8300eee1e7eb928601e"
 
 from2@^2.1.0:
   version "2.3.0"

@@ -14,14 +14,14 @@ export default class BreedsSelect extends Vue {
   @Prop({ default: [] }) private value!: number[]
   @Prop(Number) private animalId!: number
 
-  @dictionaries.Getter private getBredById!: (bredId: number) => IDictionaryItem | undefined
+  @dictionaries.Getter private getBreedById!: (bredId: number) => IDictionaryItem | undefined
 
   get isEmty(): boolean {
     return this.value ? this.value.length === 0 : false
   }
 
   private getName(bredId: number): string {
-    const bred = this.getBredById(bredId)
+    const bred = this.getBreedById(bredId)
 
     if (bred) {
       return bred.name
