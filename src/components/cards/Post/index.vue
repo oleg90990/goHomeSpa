@@ -1,5 +1,5 @@
 <template>
-  <b-link :to="{ name: 'Post', params: { id: 123 } }" class="d-block text-decoration-none text-body">
+  <b-link :to="{ name: 'Post', params: { id: item.id, item: item }}" class="d-block text-decoration-none text-body">
     <b-card :img-src="item.thumbnail" :img-alt="item.title" img-top>
       <b-card-text>
         {{ item.title }}

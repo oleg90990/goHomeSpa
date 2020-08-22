@@ -22,6 +22,7 @@ const routes: RouteConfig[] = [
         path: '/post/:id',
         name: 'Post',
         component: Post,
+        props: route => route.params,
       },
     ],
   },

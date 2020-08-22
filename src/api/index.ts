@@ -3,7 +3,7 @@ import Notify from '@/utils/notify'
 
 const mode = process.env.NODE_ENV === 'development' ? Mode.dev : Mode.prod
 
-const api = new ApiBase(mode, null, error => {
+const api = new ApiBase(mode, () => new Promise(resolve => resolve(null)), error => {
     Notify.error('Ошибка', error)
 })
 
