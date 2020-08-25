@@ -1,9 +1,11 @@
 import { Vue, Component } from 'vue-property-decorator'
-import Navbar from './components/Navbar/index.vue'
+import NavbarDefault from './components/Navbar/index.vue'
+import FooterDefault from './components/Footer/index.vue'
 
 @Component({
   components: {
-    Navbar,
+    NavbarDefault,
+    FooterDefault,
   },
 })
 export default class Default extends Vue {

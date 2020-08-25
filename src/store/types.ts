@@ -1,5 +1,6 @@
-import { IStateDictionaries } from 'friendshome-api'
+import { IStateDictionaries, IStateUserResponse } from 'friendshome-api'
 
 export interface RootState {
-   dictionaries: IStateDictionaries;
+   dictionaries: IStateDictionaries
+   user: IStateUserResponse
 }

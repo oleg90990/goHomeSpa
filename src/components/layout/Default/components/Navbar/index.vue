@@ -1,18 +1,31 @@
 <template>
   <b-navbar toggleable="lg" variant="primary">
     <b-navbar-brand :to="{ name: 'Home' }">
-      <img src="@/assets/logo.png" height="50" alt="ДрузьяДома">
+      <div class="d-flex align-items-center">
+        <img src="@/assets/logo.png" height="50" alt="ДрузьяДома">
+        <div class="text-white ml-2 text-decoration-none">
+          #ДрузьяДома
+        </div>
+      </div>
     </b-navbar-brand>
 
-    <b-navbar-toggle target="nav-collapse" />
 
-    <b-collapse id="nav-collapse" is-nav>
-      <b-navbar-nav class="ml-auto">
-        <b-nav-item href="#">
-          Логин
-        </b-nav-item>
+    <b-navbar-nav class="ml-auto">
+      <b-nav-item @click="toProfile" class="mr-3" v-if="isAuth">
+        Профиль
+      </b-nav-item>
+      <b-nav-item @click="toLogin" class="mr-3" v-if="!isAuth">
+        Вход
+      </b-nav-item>
+      <b-nav-item @click="toLogOut" class="mr-3" v-if="isAuth">
+        Выход
+      </b-nav-item>
+      <b-navbar-nav class="d-none d-md-block">
+        <b-button @click="toCreatePost" variant="light">
+          Создать объявление
+        </b-button>
       </b-navbar-nav>
-    </b-collapse>
+    </b-navbar-nav>
   </b-navbar>
 </template>
 

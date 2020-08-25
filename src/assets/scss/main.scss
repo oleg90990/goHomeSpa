@@ -2,10 +2,18 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/index.scss';
 
+body {
+  background-color: $gray-100;
+}
+
 nav .navbar-nav li a {
-    color: white !important;
+  color: white !important;
 }
 
 .pointer {
   cursor: pointer;
+}
+
+.vue-notification {
+  margin: 5px 5px 0px 5px;
 }

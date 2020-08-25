@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="h-100">
      <transition name="fade" mode="out-in">
         <div key=1 v-if="loading" class="animation">
           <img src="@/assets/logo.png" height="50" alt="Загрузка">
@@ -34,7 +34,6 @@ export default class Loader extends Vue {
 .animation {
   display: flex;
   height: 100%;
-  min-height: 500px;
   align-items: center;
   justify-content: center;
   img {
