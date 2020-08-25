@@ -8,7 +8,7 @@ export default class Navbar extends Vue {
   @user.Action private logOut!: () => void
   @user.Getter private isAuth!: boolean
 
-  private onLogOut() {
+  private toLogOut() {
     this.logOut()
     this.toHome()
   }
@@ -16,6 +16,24 @@ export default class Navbar extends Vue {
   private toHome() {
     this.$router.push({
       name: 'Home',
+    })
+  }
+
+  private toProfile() {
+    this.$router.push({
+      name: 'Profile',
+    })
+  }
+
+  private toLogin() {
+    this.$router.push({
+      name: 'Login',
+    })
+  }
+
+  private toCreatePost() {
+    this.$router.push({
+      name: 'CreatePost',
     })
   }
 }

@@ -8,6 +8,7 @@ import Post from '@/pages/Post/index.vue'
 import CreatePost from '@/pages/CreatePost/index.vue'
 import Login from '@/pages/Login/index.vue'
 import Register from '@/pages/Register/index.vue'
+import Profile from '@/pages/Profile/index.vue'
 
 import Store from '@/store';
 
@@ -36,6 +37,14 @@ const routes: RouteConfig[] = [
         name: 'Post',
         component: Post,
         props: route => route.params,
+      },
+      {
+        path: '/user/profile',
+        name: 'Profile',
+        component: Profile,
+        meta: {
+          requiresAuth: true,
+        },
       },
       {
         path: '/user/login',

@@ -8,6 +8,7 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import { namespace } from 'vuex-class';
+import smartbanner from '@/utils/smartbanner'
 
 const dictionaries = namespace('dictionaries')
 
@@ -18,6 +19,7 @@ export default class App extends Vue {
   @dictionaries.Action private loadDictionaries!: (callback: () => any) => any;
 
   private created() {
+    smartbanner()
     this.loadDictionaries(() => {
       this.hideLoadng()
     })

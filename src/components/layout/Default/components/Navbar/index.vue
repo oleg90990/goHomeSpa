@@ -9,25 +9,23 @@
       </div>
     </b-navbar-brand>
 
-    <b-navbar-toggle target="nav-collapse" />
 
-    <b-collapse id="nav-collapse" is-nav>
-      <b-navbar-nav class="ml-auto">
-        
-
-        <b-nav-item href="#" class="mr-3" :to="{ name: 'Login' }" v-if="!isAuth">
-          Вход
-        </b-nav-item>
-        <b-nav-item href="#" class="mr-3" v-if="isAuth" @click="onLogOut">
-          Выход
-        </b-nav-item>
-        <b-navbar-nav>
-          <b-button variant="light" :to="{ name: 'CreatePost' }">
-            Создать объявление
-          </b-button>
-        </b-navbar-nav>
+    <b-navbar-nav class="ml-auto">
+      <b-nav-item @click="toProfile" class="mr-3" v-if="isAuth">
+        Профиль
+      </b-nav-item>
+      <b-nav-item @click="toLogin" class="mr-3" v-if="!isAuth">
+        Вход
+      </b-nav-item>
+      <b-nav-item @click="toLogOut" class="mr-3" v-if="isAuth">
+        Выход
+      </b-nav-item>
+      <b-navbar-nav class="d-none d-md-block">
+        <b-button @click="toCreatePost" variant="light">
+          Создать объявление
+        </b-button>
       </b-navbar-nav>
-    </b-collapse>
+    </b-navbar-nav>
   </b-navbar>
 </template>
 
