@@ -4,7 +4,7 @@
       <loader :loading="loading">
         <b-row>
           <b-col lg="6" md="6" v-for="(item, key) in items" :key="key">
-            <card-post class="mb-4" :item="item" />
+            <card-post class="mb-3 mb-lg-4" :item="item" />
           </b-col>
         </b-row>
       </loader>

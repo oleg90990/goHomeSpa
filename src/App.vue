@@ -1,8 +1,7 @@
 <template>
   <div id="app">
-    <div v-if="!loading">
-      <router-view/>
-    </div>
+    <router-view v-if="!loading" />
+    <notifications group="notify" position="top right"/>
   </div>
 </template>
 

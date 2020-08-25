@@ -11,7 +11,7 @@ const dictionaries = namespace('dictionaries')
 @Component({
   components: {
     Loader,
-    PropValue
+    PropValue,
   },
 })
 export default class Post extends Vue {
@@ -20,7 +20,7 @@ export default class Post extends Vue {
 
   @dictionaries.Getter private getBreedById!: (bredId: number) => IDictionaryItem | undefined
   @dictionaries.Getter private getAnimalById!: (animalId: number) => IDictionaryAnimalType | undefined
-  @dictionaries.Getter private getColorById!: (colorId: number) => IDictionaryColorItem | undefined 
+  @dictionaries.Getter private getColorById!: (colorId: number) => IDictionaryColorItem | undefined
 
   private data: IItem | null = null
   private loading: boolean = false
@@ -46,15 +46,13 @@ export default class Post extends Vue {
     const color = this.getColorById(id);
 
     return {
-      backgroundColor: color ? color.value : '#fff'
+      backgroundColor: color ? color.value : '#fff',
     }
   }
 
   private formatPhoneNumber(str: string): string {
     const cleaned = str.replace(/\D/g, '')
     const match = cleaned.match(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/)
-
-    console.log(match)
 
     if (match) {
       return '+7 (' + match[2] + ') ' + match[3] + '-' + match[4] + '-' + match[5]
@@ -73,7 +71,7 @@ export default class Post extends Vue {
 
   private loadPost() {
     this.showLoading()
-    adsApi.loadPost(parseInt(this.id))
+    adsApi.loadPost(parseInt(this.id, 10))
       .then(({ data }) => {
         this.setData(data)
       })

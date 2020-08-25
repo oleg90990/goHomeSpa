@@ -56,7 +56,7 @@
             Показать номер
           </b-button>
 
-          <b-modal id="modal-1" title="Не забудьте сказать что вы нашли объявления на сайте Друзья Дома" hide-footer centered>
+          <b-modal id="modal-1" title="Не забудьте сказать что вы нашли объявление на сайте Друзья Дома" hide-footer centered>
             <a :href="'tel:' + data.phone" class="phone text-decoration-none text-center text-dark d-block">
               {{ formatPhoneNumber(data.phone) }}
             </a>
