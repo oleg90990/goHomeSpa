@@ -1,17 +1,13 @@
 import { setToken, removeToken } from '@/utils/auth'
 import { MutationTree } from 'vuex'
-import { SET_USER, UNSET_USER } from './mutationTypes'
-import { IStateUserResponse } from 'friendshome-api'
+import { SET_USER, SET_TOKEN, UNSET_USER, UNSET_TOKEN } from './mutationTypes'
+import { IUser, IStateUserResponse } from 'friendshome-api'
 
 export const mutations: MutationTree<IStateUserResponse> = {
-  [SET_USER](state, { access_token, user }: IStateUserResponse) {
-    setToken(access_token)
-    state.access_token = access_token
+  [SET_USER](state, user: IUser) {
     state.user = user
   },
   [UNSET_USER](state) {
-    removeToken()
-    state.access_token = ''
     state.user = {
       id: 0,
       name: '',
@@ -20,5 +16,13 @@ export const mutations: MutationTree<IStateUserResponse> = {
       vk: false,
       vkGroups: [],
     }
+  },
+  [SET_TOKEN](state, token: string) {
+    setToken(token)
+    state.access_token = token
+  },
+  [UNSET_TOKEN](state) {
+    removeToken()
+    state.access_token = ''
   },
 }

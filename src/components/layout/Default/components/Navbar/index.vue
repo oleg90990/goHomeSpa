@@ -8,24 +8,23 @@
         </div>
       </div>
     </b-navbar-brand>
-
-
     <b-navbar-nav class="ml-auto">
       <b-nav-item @click="toProfile" class="mr-3" v-if="isAuth">
         Профиль
       </b-nav-item>
-      <b-nav-item @click="toLogin" class="mr-3" v-if="!isAuth">
+      <b-nav-item @click="modalShow" class="mr-3" v-if="!isAuth">
         Вход
       </b-nav-item>
       <b-nav-item @click="toLogOut" class="mr-3" v-if="isAuth">
         Выход
       </b-nav-item>
-      <b-navbar-nav class="d-none d-md-block">
+      <b-navbar-nav class="d-none d-md-block" v-if="false">
         <b-button @click="toCreatePost" variant="light">
           Создать объявление
         </b-button>
       </b-navbar-nav>
     </b-navbar-nav>
+    <auth-modal ref="auth-modal" />
   </b-navbar>
 </template>
 
