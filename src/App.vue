@@ -11,16 +11,21 @@ import { namespace } from 'vuex-class';
 import smartbanner from '@/utils/smartbanner'
 
 const dictionaries = namespace('dictionaries')
+const user = namespace('user')
 
 @Component
 export default class App extends Vue {
   private loading: boolean = true;
 
-  @dictionaries.Action private loadDictionaries!: (callback: () => any) => any;
+  @dictionaries.Action private loadDictionaries!: () => Promise<any>
+  @user.Action private restore!: () => Promise<any>
 
   private created() {
-    smartbanner()
-    this.loadDictionaries(() => {
+    smartbanner();
+    Promise.all([
+      this.loadDictionaries(),
+      this.restore(),
+    ]).finally(() => {
       this.hideLoadng()
     })
   }
