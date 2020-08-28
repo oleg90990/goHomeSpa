@@ -3,12 +3,7 @@
     <loader :loading="loading" class="loader">
       <b-form @submit="onSubmit">
         <b-form-group label="Номер телефона">
-          <b-form-input
-            v-model="data.mobile"
-            type="text"
-            required
-            placeholder="+7 (xxx) xxx-xx-xx"
-          ></b-form-input>
+          <phone-input v-model="data.mobile" required/>
         </b-form-group>
         <b-form-group label="Пароль">
           <b-form-input

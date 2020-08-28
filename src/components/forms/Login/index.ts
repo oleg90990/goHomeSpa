@@ -2,12 +2,14 @@ import { Vue, Component } from 'vue-property-decorator'
 import { LoginPayload } from '@/store/modules/user/types'
 import Loader from '@/components/Loader.vue'
 import { namespace } from 'vuex-class';
+import PhoneInput from '@/components/ui/elements/PhoneInput/index.vue'
 
 const user = namespace('user')
 
 @Component({
   components: {
      Loader,
+     PhoneInput,
   },
 })
 export default class Login extends Vue {

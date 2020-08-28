@@ -3,7 +3,12 @@
     <b-row v-if="data">
       <b-col lg="6">
         <b-carousel id="images" controls>
-          <b-carousel-slide v-for="(src, key) in data.images" :key="key" :img-src="src" />
+          <b-carousel-slide v-for="(src, key) in data.images" :key="key" class="carousel-slide">
+            <template v-slot:img>
+              <div class="background" :style="{ backgroundImage: `url(${src})` }" />
+              <img :src="src" />
+            </template>
+          </b-carousel-slide>
         </b-carousel>
       </b-col>
       <b-col lg="6">

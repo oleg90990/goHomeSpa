@@ -1,5 +1,5 @@
 <template>
-  <b-card sub-title="Город">
+  <b-card class="border-primary" sub-title="Город">
     <city-select v-model="input" class="mt-3" />
   </b-card>
 </template>

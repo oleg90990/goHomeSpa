@@ -4,7 +4,7 @@
       <div class="d-flex align-items-center">
         <img src="@/assets/logo.png" height="50" alt="ДрузьяДома">
         <div class="text-white ml-2 text-decoration-none">
-          #ДрузьяДома
+          #друзьядома
         </div>
       </div>
     </b-navbar-brand>
