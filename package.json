@@ -16,6 +16,7 @@
     "core-js": "^3.6.5",
     "friendshome-api": "git+https://github.com/oleg90990/goHomeApi.git",
     "js-cookie": "^2.2.1",
+    "libphonenumber-js": "^1.7.57",
     "react-native-vkontakte-login": "^1.0.1",
     "vue": "^2.6.11",
     "vue-bootstrap-typeahead": "^0.2.6",
