@@ -4,6 +4,7 @@ import Loader from '@/components/Loader.vue'
 import CitySelect from '@/components/ui/elements/CitySelect/index.vue'
 import { namespace } from 'vuex-class';
 import { ICityItem } from 'friendshome-api'
+import PhoneInput from '@/components/ui/elements/PhoneInput/index.vue'
 
 const user = namespace('user')
 
@@ -11,6 +12,7 @@ const user = namespace('user')
   components: {
      Loader,
      CitySelect,
+     PhoneInput,
   },
 })
 export default class Register extends Vue {

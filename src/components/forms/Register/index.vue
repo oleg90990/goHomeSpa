@@ -13,11 +13,7 @@
           ></b-form-input>
         </b-form-group>
         <b-form-group label="Телефон">
-          <b-form-input
-            type="text"
-            v-model="data.mobile"
-            required
-          ></b-form-input>
+          <phone-input v-model="data.mobile" required/>
         </b-form-group>
         <b-form-group label="Пароль">
           <b-form-input
