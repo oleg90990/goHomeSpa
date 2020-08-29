@@ -1,6 +1,6 @@
 <template>
   <b-modal ref="modal" hide-footer hide-header :title="title" centered>
-    <b-tabs content-class="mt-3">
+    <b-tabs content-class="mt-3" :fill="true">
       <b-tab title="Вход" active>
         <login-form @success="onSuccess" />
       </b-tab>

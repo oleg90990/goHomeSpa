@@ -17,3 +17,7 @@ nav .navbar-nav li a {
 .vue-notification {
   margin: 5px 5px 0px 5px;
 }
+
+a[role="tab"] {
+  outline: 0;
+}

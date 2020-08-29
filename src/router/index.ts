@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
+import { isAuth } from '@/utils/auth'
 
 import Container from '@/components/layout/Default/index.vue'
 
@@ -9,8 +10,6 @@ import CreatePost from '@/pages/CreatePost/index.vue'
 import Login from '@/pages/Login/index.vue'
 import Register from '@/pages/Register/index.vue'
 import Profile from '@/pages/Profile/index.vue'
-
-import Store from '@/store';
 
 Vue.use(VueRouter)
 
@@ -74,15 +73,15 @@ const router = new VueRouter({
 
 
 router.beforeEach((to, from, next) => {
-  const isAuth = Store.getters['user/isAuth']
+  const auth = isAuth()
 
   const {
     requiresAuth,
   } = to.meta
 
-  if (requiresAuth === false && isAuth) {
+  if (requiresAuth === false && auth) {
     next({ name: 'Home' })
-  } else if (requiresAuth === true && !isAuth) {
+  } else if (requiresAuth === true && !auth) {
     next({ name: 'Login' })
   } else {
     next()

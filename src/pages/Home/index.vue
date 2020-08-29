@@ -9,7 +9,7 @@
         </b-row>
       </loader>
     </b-col>
-    <b-col lg="4">
+    <b-col lg="4" class="mt-2 mt-md-0">
       <search-form :data="data" />
     </b-col>
   </b-row>
