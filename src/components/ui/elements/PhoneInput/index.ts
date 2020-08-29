@@ -5,6 +5,7 @@ import { formatNumber } from "libphonenumber-js";
 export default class PhoneInput extends Vue {
   @Prop({ default: '' }) private value!: string
   @Prop({ default: false }) private required!: boolean
+  @Prop({ default: false }) private disabled!: boolean
 
   private input = this.value;
 
