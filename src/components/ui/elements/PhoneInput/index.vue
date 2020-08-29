@@ -1,6 +1,6 @@
 <template>
   <b-form-input
-    disabled
+    :disabled="disabled"
     v-model="input"
     @blur="onBlur"
     type="text"
