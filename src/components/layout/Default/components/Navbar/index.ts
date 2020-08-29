@@ -20,7 +20,7 @@ export default class Navbar extends Vue {
     }
   }
 
-  private modalShow() {
+  private authShow() {
     this.modal.show();
   }
 
@@ -32,18 +32,18 @@ export default class Navbar extends Vue {
   private toHome() {
     this.$router.push({
       name: 'Home',
-    })
+    }).catch(() => true)
   }
 
   private toProfile() {
     this.$router.push({
       name: 'Profile',
-    })
+    }).catch(() => true)
   }
 
   private toCreatePost() {
     this.$router.push({
       name: 'CreatePost',
-    })
+    }).catch(() => true)
   }
 }

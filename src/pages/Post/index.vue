@@ -11,7 +11,7 @@
           </b-carousel-slide>
         </b-carousel>
       </b-col>
-      <b-col lg="6">
+      <b-col lg="6" class="mt-3 mt-md-0">
         <h1>{{ data.title }}</h1>
         <hr>
         <b-list-group class="mb-3">
