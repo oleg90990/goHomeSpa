@@ -16,6 +16,11 @@ export default class CitySelect extends Vue {
   private query: string = ''
   private options: ICityItem[] = []
 
+  get typeahead() {
+    return this.$refs.typeahead as Vue & {
+      inputValue: string;
+    }
+  }
 
   @Watch('query')
   private onChangeQuery = _.debounce(this.loadCities, 300)
@@ -32,13 +37,9 @@ export default class CitySelect extends Vue {
       })
   }
 
-  private created() {
+  private mounted() {
     if (this.value) {
-      this.query = this.value.name
+      this.typeahead.inputValue = this.value.name
     }
   }
-
-  // private get options(): string[] {
-  //   return ['Canada', 'USA', 'Mexico']
-  // }
 }

@@ -2,7 +2,7 @@ import { ActionTree } from 'vuex'
 import { RootState } from '@/store/types'
 import { SET_USER, SET_TOKEN, UNSET_USER, UNSET_TOKEN } from './mutationTypes'
 import { userApi as API } from '@/api'
-import { IStateUserResponse } from 'friendshome-api'
+import { IStateUserResponse, IUserUpdateData } from 'friendshome-api'
 import { LoginPayload, RegisterPayload } from './types'
 import { getToken } from '@/utils/auth'
 
@@ -27,6 +27,19 @@ export const actions: ActionTree<IStateUserResponse, RootState> = {
         .then(({ data: { user, access_token }}) => {
           commit(SET_USER, user)
           commit(SET_TOKEN, access_token)
+          resolve()
+        })
+        .catch(() => {
+          reject()
+        })
+    })
+  },
+
+  async update({ commit }, payload: IUserUpdateData): Promise<any> {
+    return new Promise((resolve, reject) => {
+      API.update(payload)
+        .then(({ data }) => {
+          commit(SET_USER, data)
           resolve()
         })
         .catch(() => {

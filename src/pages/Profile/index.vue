@@ -1,7 +1,11 @@
 <template>
-    <b-tabs pills card vertical>
+    <b-tabs pills card vertical nav-wrapper-class="w-25">
       <b-tab title="Профиль" active>
-        <profile-form />
+        <b-row>
+          <b-col lg="6" md="12"> 
+            <profile-form />
+          </b-col>
+        </b-row>
       </b-tab>
       <b-tab title="Мои объявления">
         <b-card-text>
