@@ -1,16 +1,16 @@
 import Vue from 'vue';
 
 export default {
-  success(title: string, text: string) {
+  success(title: string, text: string = '') {
     this.notify(title, text, 'success');
   },
-  error(title: string, text: string) {
+  error(title: string, text: string = '') {
     this.notify(title, text, 'error');
   },
-  warn(title: string, text: string) {
+  warn(title: string, text: string = '') {
     this.notify(title, text, 'warn');
   },
-  notify(title: string, text: string, type: string) {
+  notify(title: string, text: string = '', type: string) {
     Vue.notify({
       group: 'notify',
       title,

@@ -1,9 +1,9 @@
 <template>
   <div class="register-form pt-3 pb-3">
     <loader :loading="loading" class="loader">
-      <b-form @submit="onSubmit">
+      <b-form @submit="onSubmit" v-if="user.id">
         <b-form-group label="Город">
-          <CitySelect />
+          <city-select v-model="city" />
         </b-form-group>
         <b-form-group label="Имя">
           <b-form-input
@@ -13,20 +13,18 @@
           ></b-form-input>
         </b-form-group>
         <b-form-group label="Телефон">
-          <phone-input v-model="data.mobile" required disabled/>
+          <phone-input v-model="user.mobile" required disabled/>
         </b-form-group>
         <b-form-group label="Пароль">
           <b-form-input
             type="password"
             v-model="data.password"
-            required
           ></b-form-input>
         </b-form-group>
         <b-form-group label="Повторите пароль">
           <b-form-input
             type="password"
             v-model="data.c_password"
-            required
           ></b-form-input>
         </b-form-group>
         <div class="d-flex align-items-center mt-4">

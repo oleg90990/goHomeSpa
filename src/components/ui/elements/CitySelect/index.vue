@@ -1,6 +1,7 @@
 <template>
   <div>
-    <vue-bootstrap-typeahead 
+    <vue-bootstrap-typeahead
+      ref="typeahead"
       v-model="query"
       :data="options"
       :serializer="s => s.name"
