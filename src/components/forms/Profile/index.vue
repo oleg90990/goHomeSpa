@@ -15,6 +15,13 @@
         <b-form-group label="Телефон">
           <phone-input v-model="user.mobile" required disabled/>
         </b-form-group>
+        <b-form-group label="E-mail">
+          <b-form-input
+            type="text"
+            v-model="data.email"
+            required
+          ></b-form-input>
+        </b-form-group>
         <b-form-group label="Пароль">
           <b-form-input
             type="password"
