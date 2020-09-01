@@ -1,6 +1,7 @@
 <template>
   <div>
     <vue-bootstrap-typeahead
+      :required="required"
       ref="typeahead"
       v-model="query"
       :data="options"

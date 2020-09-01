@@ -1,5 +1,5 @@
 <template>
-    <b-tabs pills card vertical nav-wrapper-class="w-25">
+    <b-tabs pills card vertical nav-wrapper-class="w-25" class="tabs-profile">
       <b-tab title="Профиль" active>
         <b-row>
           <b-col lg="6" md="12"> 
@@ -9,7 +9,13 @@
       </b-tab>
       <b-tab title="Мои объявления">
         <b-card-text>
-          Tab contents 2
+          <b-button :to="{ name: 'CreatePost' }" variant="primary">
+            Создать пост
+          </b-button>
+
+          <div v-for="(post, key) in posts" :key="key">
+            {{ post.title }}
+          </div>
         </b-card-text>
       </b-tab>
     </b-tabs>

@@ -8,18 +8,12 @@ const dictionaries = namespace('dictionaries')
 export default class ModalSelectBred extends Vue {
   @Prop(Number) private animalId!: number
 
-  @dictionaries.Getter private animals!: IDictionaryAnimalType[]
+  @dictionaries.Getter private getBreedsByAnimal!: (animalId: number) => IDictionaryItem[]
 
   private filter: string = ''
 
   get breeds(): IDictionaryItem[] {
-    const animal = this.animals.find(({ id }) => id === this.animalId)
-
-    if (!animal) {
-      return []
-    }
-
-    return animal.breeds.filter(({ name }) => {
+    return this.getBreedsByAnimal(this.animalId).filter(({ name }) => {
       return name.toLowerCase().includes(this.filter.toLowerCase());
     });
   }
