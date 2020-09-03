@@ -21,3 +21,16 @@ nav .navbar-nav li a {
 a[role="tab"] {
   outline: 0;
 }
+
+.page-border {
+  border: 1px solid $gray-300;
+  border-radius: $border-radius;
+  padding: 30px;
+  min-height: 600px;
+  background-color: white;
+  z-index: -1;
+
+  &.transparent {
+    background-color: transparent;
+  }
+}

@@ -2,10 +2,12 @@ import { Vue, Component } from 'vue-property-decorator'
 import ProfileForm from '@/components/forms/Profile/index.vue'
 import { IItem } from 'friendshome-api'
 import { adsApi } from '@/api'
+import CardPost from '@/components/cards/Post/index.vue'
 
 @Component({
   components: {
     ProfileForm,
+    CardPost,
   },
 })
 export default class Profile extends Vue {

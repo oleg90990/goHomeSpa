@@ -3,16 +3,7 @@
     <loader :loading="loading" class="loader">
       <b-form @submit="onSubmit">
         <b-row>
-          <b-col md="12" lg="5">
-            <b-form-group label="Описание">
-              <b-form-textarea v-model="data.content" rows="4" max-rows="4">
-              </b-form-textarea>
-            </b-form-group>
-            <b-form-group label="Изображения">
-              <image-select v-model="data.images" />
-            </b-form-group>
-          </b-col>
-          <b-col md="12" lg="5">
+          <b-col md="12" lg="6">
             <b-form-group label="Город">
               <city-select v-model="city" :cities="true" required/>
             </b-form-group>
@@ -45,6 +36,15 @@
                 Создать
               </b-button>
             </div>
+          </b-col>
+          <b-col md="12" lg="6">
+            <b-form-group label="Описание">
+              <b-form-textarea v-model="data.content" rows="4" max-rows="4">
+              </b-form-textarea>
+            </b-form-group>
+            <b-form-group label="Изображения">
+              <image-select v-model="data.images" />
+            </b-form-group>
           </b-col>
         </b-row>
       </b-form>

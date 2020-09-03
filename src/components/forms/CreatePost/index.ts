@@ -5,6 +5,7 @@ import { ICityItem, IPostCreatedBody, Gender, YesNo, IDictionaryAnimalType, IDic
 import { BvEvent } from 'bootstrap-vue'
 import { ISelectOption } from '@/store/types'
 import { getLabelSterilization } from '@/helpers/Labels'
+import { adsApi } from '@/api/'
 
 import ColorSelect from '@/components/ui/elements/ColorSelect/index.vue'
 import CitySelect from '@/components/ui/elements/CitySelect/index.vue'
@@ -84,7 +85,29 @@ export default class CreatePost extends Vue {
   }
 
   private onSubmit(evt: BvEvent) {
+    this.showLoading()
+    adsApi.create(this.data)
+      .then(({ data }) => {
+        const item: any = data
+        const id: string = data.id.toString()
+
+        this.$router.push({
+          name: 'Post',
+          params: { id, item },
+        })
+      })
+      .finally(() => {
+        this.hideLoading()
+      })
+
     evt.preventDefault()
-    // console.log(this.data)
+  }
+
+  private showLoading() {
+    this.loading = true
+  }
+
+  private hideLoading() {
+    this.loading = false
   }
 }
