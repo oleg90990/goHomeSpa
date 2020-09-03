@@ -5,6 +5,7 @@ import PhoneInput from '@/components/ui/elements/PhoneInput/index.vue'
 import { namespace } from 'vuex-class';
 import { ICityItem, IUserUpdateData, IUser } from 'friendshome-api'
 import Notify from '@/utils/notify'
+import { BvEvent } from 'bootstrap-vue'
 
 const user = namespace('user')
 
@@ -50,7 +51,7 @@ export default class Profile extends Vue {
     this.data.city_id = city.id
   }
 
-  private onSubmit(evt: any) {
+  private onSubmit(evt: BvEvent) {
     evt.preventDefault()
     this.showLoading()
     this.update(this.data)

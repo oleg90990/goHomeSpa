@@ -11,7 +11,8 @@ import _ from 'lodash';
 })
 export default class CitySelect extends Vue {
   @Prop(Object) private value!: ICityItem
-  @Prop(Number) private animalId!: number
+  @Prop({ default: false }) private cities!: boolean
+  @Prop(Boolean) private required!: boolean
 
   private query: string = ''
   private options: ICityItem[] = []
@@ -31,7 +32,7 @@ export default class CitySelect extends Vue {
   }
 
   private loadCities() {
-    Api.findCity(this.query, true)
+    Api.findCity(this.query, !this.cities)
       .then(({ data }) => {
         this.options = data
       })

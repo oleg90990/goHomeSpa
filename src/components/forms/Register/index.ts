@@ -5,6 +5,7 @@ import CitySelect from '@/components/ui/elements/CitySelect/index.vue'
 import { namespace } from 'vuex-class';
 import { ICityItem } from 'friendshome-api'
 import PhoneInput from '@/components/ui/elements/PhoneInput/index.vue'
+import { BvEvent } from 'bootstrap-vue'
 
 const user = namespace('user')
 
@@ -30,7 +31,7 @@ export default class Register extends Vue {
 
   private loading: boolean = false
 
-  private onSubmit(evt: any) {
+  private onSubmit(evt: BvEvent) {
     evt.preventDefault()
     this.showLoading()
     this.register(this.data)

@@ -1,9 +1,9 @@
 <template>
-  <div class="register-form pt-3 pb-3">
+  <div class="register-form">
     <loader :loading="loading" class="loader">
       <b-form @submit="onSubmit" v-if="user.id">
         <b-form-group label="Город">
-          <city-select v-model="city" />
+          <city-select v-model="city" :cities="true"/>
         </b-form-group>
         <b-form-group label="Имя">
           <b-form-input

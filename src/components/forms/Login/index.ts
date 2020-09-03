@@ -3,6 +3,7 @@ import { LoginPayload } from '@/store/modules/user/types'
 import Loader from '@/components/Loader.vue'
 import { namespace } from 'vuex-class';
 import PhoneInput from '@/components/ui/elements/PhoneInput/index.vue'
+import { BvEvent } from 'bootstrap-vue'
 
 const user = namespace('user')
 
@@ -22,7 +23,7 @@ export default class Login extends Vue {
 
   private loading: boolean = false
 
-  private onSubmit(evt: any) {
+  private onSubmit(evt: BvEvent) {
     evt.preventDefault()
     this.showLoading()
     this.login(this.data)

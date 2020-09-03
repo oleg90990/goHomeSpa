@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="lg">
+  <b-navbar class="border-bottom bg-white" toggleable="lg">
     <b-navbar-brand :to="{ name: 'Home' }">
       <div class="d-flex align-items-center">
         <img src="@/assets/logo.png" height="50" alt="ДрузьяДома">
