@@ -45,6 +45,10 @@ export default class ImageSelect extends Vue {
     })
   }
 
+  private removeItem(index: string) {
+    this.$delete(this.images, index)
+  }
+
   @Watch('images')
   @Emit()
   private input() {

@@ -1,6 +1,6 @@
 import { Vue, Component, Prop, Emit } from 'vue-property-decorator'
 import { namespace } from 'vuex-class';
-import { IDictionaryItem, IDictionaryAnimalType } from 'friendshome-api'
+import { IDictionaryItem } from 'friendshome-api'
 
 const dictionaries = namespace('dictionaries')
 

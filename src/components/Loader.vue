@@ -23,7 +23,7 @@ export default class Loader extends Vue {
 <style lang="scss" scoped>
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity .3s
+    transition: opacity .2s
 }
 
 .fade-enter,

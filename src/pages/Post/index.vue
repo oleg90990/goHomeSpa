@@ -13,6 +13,9 @@
           </b-carousel>
         </b-col>
         <b-col lg="6" class="mt-3 mt-md-0">
+          <div v-if="data.user_id == user.id" class="d-flex justify-content-end">
+            <Actions :data="data" @publish="publish" />
+          </div>
           <h1>{{ data.title }}</h1>
           <div class="p-2 pl-0 border-bottom">
             <prop-value label="Город">
@@ -51,10 +54,10 @@
               </div>
             </prop-value>
           </div>
-          <div class="mb-3">
+          <div class="mb-3 mt-3">
             {{ data.content }}
           </div>
-          <div class="mb-3">
+          <div v-if="isActive" class="mb-3">
             <b-button v-b-modal.modal-1 block size="lg" variant="primary">
               Показать номер
             </b-button>

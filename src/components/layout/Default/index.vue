@@ -12,9 +12,3 @@
 
 <script lang="ts" src="./index.ts" />
 <style lang="scss" src="./index.scss" scoped />
-
-<style lang="scss" scoped>
-.content {
-  min-height: 100vh;
-}
-</style>
