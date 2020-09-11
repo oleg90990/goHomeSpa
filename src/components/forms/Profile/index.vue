@@ -7,6 +7,7 @@
         </b-form-group>
         <b-form-group label="Имя">
           <b-form-input
+            set autocomplete="off"
             type="text"
             v-model="data.name"
             required
@@ -17,6 +18,7 @@
         </b-form-group>
         <b-form-group label="E-mail">
           <b-form-input
+            set autocomplete="off"
             type="text"
             v-model="data.email"
             required
@@ -24,12 +26,14 @@
         </b-form-group>
         <b-form-group label="Пароль">
           <b-form-input
+            set autocomplete="off"
             type="password"
             v-model="data.password"
           ></b-form-input>
         </b-form-group>
         <b-form-group label="Повторите пароль">
           <b-form-input
+            set autocomplete="off"
             type="password"
             v-model="data.c_password"
           ></b-form-input>

@@ -25,8 +25,6 @@ export default class Profile extends Vue {
   private data: IUserUpdateData = {
     email: '',
     name: '',
-    password: '',
-    c_password: '',
     city_id: 1,
   }
 
@@ -40,8 +38,6 @@ export default class Profile extends Vue {
     this.data = {
       email: this.user.email,
       name: this.user.name,
-      password: '',
-      c_password: '',
       city_id: 0,
     }
   }
@@ -53,6 +49,15 @@ export default class Profile extends Vue {
 
   private onSubmit(evt: BvEvent) {
     evt.preventDefault()
+
+    if (this.data.password === "") {
+      this.$delete(this.data, 'password');
+    }
+
+    if (this.data.c_password === "") {
+      this.$delete(this.data, 'c_password');
+    }
+
     this.showLoading()
     this.update(this.data)
       .then(() => {
