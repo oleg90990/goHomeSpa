@@ -7,6 +7,7 @@ import Container from '@/components/layout/Default/index.vue'
 import Home from '@/pages/Home/index.vue'
 import Post from '@/pages/Post/index.vue'
 import CreatePost from '@/pages/CreatePost/index.vue'
+import EditPost from '@/pages/EditPost/index.vue'
 import Login from '@/pages/Login/index.vue'
 import Register from '@/pages/Register/index.vue'
 import Profile from '@/pages/Profile/index.vue'
@@ -32,10 +33,37 @@ const routes: RouteConfig[] = [
         },
       },
       {
+        path: '/post/:id/edit',
+        name: 'EditPost',
+        component: EditPost,
+        props: route => {
+          const {
+            item, id,
+          } = route.params
+
+          return {
+            item,
+            id: parseInt(id, 10),
+          }
+        },
+        meta: {
+          requiresAuth: true,
+        },
+      },
+      {
         path: '/post/:id',
         name: 'Post',
         component: Post,
-        props: route => route.params,
+        props: route => {
+          const {
+            item, id,
+          } = route.params
+
+          return {
+            item,
+            id: parseInt(id, 10),
+          }
+        },
       },
       {
         path: '/user/profile',

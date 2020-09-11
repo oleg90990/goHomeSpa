@@ -1,23 +1,28 @@
 import { Vue, Component, Prop } from 'vue-property-decorator'
-import { IItem, IDictionaryItem, IDictionaryAnimalType, IDictionaryColorItem } from 'friendshome-api'
+import { IItem, IDictionaryItem, IDictionaryAnimalType, IDictionaryColorItem, IUser } from 'friendshome-api'
 import { adsApi } from '@/api'
 import Loader from '@/components/Loader.vue'
 import PropValue from './components/PropValue/index.vue'
+import Actions from './components/Actions/index.vue'
 import { namespace } from 'vuex-class'
 import { getLabelAge, getLabelSterilization, getLabelYesNo } from '@/helpers/Labels'
+import Notify from '@/utils/notify'
 
 const dictionaries = namespace('dictionaries')
+const user = namespace('user')
 
 @Component({
   components: {
     Loader,
     PropValue,
+    Actions,
   },
 })
 export default class Post extends Vue {
   @Prop(Object) private item?: IItem
-  @Prop(String) private id!: string
+  @Prop(Number) private id!: number
 
+  @user.Getter private user!: IUser
   @dictionaries.Getter private getBreedById!: (bredId: number) => IDictionaryItem | undefined
   @dictionaries.Getter private getAnimalById!: (animalId: number) => IDictionaryAnimalType | undefined
   @dictionaries.Getter private getColorById!: (colorId: number) => IDictionaryColorItem | undefined
@@ -40,6 +45,10 @@ export default class Post extends Vue {
     if (this.data) {
       return this.getAnimalById(this.data.animal_id)
     }
+  }
+
+  get isActive(): boolean {
+    return this.data ? this.data.active : false
   }
 
   private getColorStyle(id: number) {
@@ -71,9 +80,21 @@ export default class Post extends Vue {
 
   private loadPost() {
     this.showLoading()
-    adsApi.loadPost(parseInt(this.id, 10))
+    adsApi.loadPost(this.id)
       .then(({ data }) => {
         this.setData(data)
+      })
+      .finally(() => {
+        this.hideLoading()
+      })
+  }
+
+  private publish() {
+    this.showLoading()
+    adsApi.publish(this.id, false)
+      .then(({ data }) => {
+        this.setData(data)
+        Notify.success(`Объявление "${data.title}" успешно снято с публикации`)
       })
       .finally(() => {
         this.hideLoading()
